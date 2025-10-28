@@ -18,20 +18,139 @@
   const GLOBAL_CHEATS_KEY = "tqplus:v3:globalCheats";
 
   // ===================== DATA (present-based for all tenses) =====================
-  const PRESENT = {
-    1:[{en:"Who?",es:"¿Quién?"},{en:"What?",es:"¿Qué?"},{en:"Where?",es:"¿Dónde?"},{en:"When?",es:"¿Cuándo?"},{en:"Why?",es:"¿Por qué?"},{en:"How?",es:"¿Cómo?"},{en:"Which?",es:"¿Cuál?"},{en:"Whose?",es:"¿De quién?"},{en:"How many?",es:"¿Cuántos?"},{en:"How much?",es:"¿Cuánto?"},{en:"From where?",es:"¿De dónde?"},{en:"To where?",es:"¿Adónde?"},{en:"Since when?",es:"¿Desde cuándo?"},{en:"Until when?",es:"¿Hasta cuándo?"},{en:"How often?",es:"¿Con qué frecuencia?"},{en:"How old?",es:"¿Cuántos años?"}],
-    2:[{en:"Who is it?",es:"¿Quién es?"},{en:"What is it?",es:"¿Qué es?"},{en:"Where are you?",es:"¿Dónde estás?"},{en:"When is it?",es:"¿Cuándo es?"},{en:"Why is it cold?",es:"¿Por qué hace frío?"},{en:"How are you?",es:"¿Cómo estás?"},{en:"Which one?",es:"¿Cuál?"},{en:"Whose book is it?",es:"¿De quién es el libro?"},{en:"How many students?",es:"¿Cuántos estudiantes?"},{en:"How much money?",es:"¿Cuánto dinero?"},{en:"Where is it?",es:"¿Dónde está?"},{en:"When do we meet?",es:"¿Cuándo nos vemos?"}],
-    3:[{en:"Who are you?",es:"¿Quién eres?"},{en:"What do you want?",es:"¿Qué quieres?"},{en:"Where do you live?",es:"¿Dónde vives?"},{en:"When do you study?",es:"¿Cuándo estudias?"},{en:"Why are you here?",es:"¿Por qué estás aquí?"},{en:"How do you feel?",es:"¿Cómo te sientes?"},{en:"Which is your house?",es:"¿Cuál es tu casa?"},{en:"Whose idea is it?",es:"¿De quién es la idea?"},{en:"How many brothers do you have?",es:"¿Cuántos hermanos tienes?"},{en:"How much water do you drink?",es:"¿Cuánta agua bebes?"}],
-    4:[{en:"Who is your teacher?",es:"¿Quién es tu profesor?"},{en:"What time is it?",es:"¿Qué hora es?"},{en:"Where do you work?",es:"¿Dónde trabajas?"},{en:"When do you sleep?",es:"¿Cuándo duermes?"},{en:"Why are you sad?",es:"¿Por qué estás triste?"},{en:"How do you learn?",es:"¿Cómo aprendes?"},{en:"Which subject do you like?",es:"¿Qué asignatura te gusta?"},{en:"Whose car is this?",es:"¿De quién es este coche?"},{en:"How many friends do you have?",es:"¿Cuántos amigos tienes?"},{en:"How long is the class?",es:"¿Cuánto dura la clase?"}],
-    5:[{en:"Who are they?",es:"¿Quiénes son ellos?"},{en:"What are you doing?",es:"¿Qué haces?"},{en:"Where are you going?",es:"¿Adónde vas?"},{en:"When do you arrive?",es:"¿Cuándo llegas?"},{en:"Why are you late?",es:"¿Por qué llegas tarde?"},{en:"How do you know?",es:"¿Cómo sabes?"},{en:"Which one do you prefer?",es:"¿Cuál prefieres?"},{en:"Whose idea is that?",es:"¿De quién es esa idea?"},{en:"How many languages do you speak?",es:"¿Cuántos idiomas hablas?"},{en:"How much time do we have?",es:"¿Cuánto tiempo tenemos?"}],
-    6:[{en:"Who helps you?",es:"¿Quién te ayuda?"},{en:"What do you need?",es:"¿Qué necesitas?"},{en:"Where is your house?",es:"¿Dónde está tu casa?"},{en:"When do you eat lunch?",es:"¿Cuándo almuerzas?"},{en:"Why do you study Spanish?",es:"¿Por qué estudias español?"},{en:"How do you get to school?",es:"¿Cómo llegas a la escuela?"},{en:"Which class are you in?",es:"¿En qué clase estás?"},{en:"Whose turn is it?",es:"¿De quién es el turno?"},{en:"How many pets do you have?",es:"¿Cuántas mascotas tienes?"},{en:"How much does it cost?",es:"¿Cuánto cuesta?"}],
-    7:[{en:"Who helps you at home?",es:"¿Quién te ayuda en casa?"},{en:"What do you eat for breakfast?",es:"¿Qué desayunas?"},{en:"Where do you go on weekends?",es:"¿Adónde vas los fines de semana?"},{en:"When do you wake up?",es:"¿Cuándo te despiertas?"},{en:"Why do you run?",es:"¿Por qué corres?"},{en:"How do you feel today?",es:"¿Cómo te sientes hoy?"},{en:"Which movie do you like?",es:"¿Qué película te gusta?"},{en:"Whose phone is this?",es:"¿De quién es este teléfono?"},{en:"How many hours do you study?",es:"¿Cuántas horas estudias?"},{en:"How much homework do you have?",es:"¿Cuánta tarea tienes?"}],
-    8:[{en:"Who is calling?",es:"¿Quién llama?"},{en:"What are they doing?",es:"¿Qué hacen?"},{en:"Where do you go every day?",es:"¿Adónde vas cada día?"},{en:"When do you finish work?",es:"¿Cuándo terminas el trabajo?"},{en:"Why are you tired?",es:"¿Por qué estás cansado?"},{en:"How do you travel to school?",es:"¿Cómo viajas a la escuela?"},{en:"Which color do you like?",es:"¿Qué color te gusta?"},{en:"Whose bag is that?",es:"¿De quién es esa bolsa?"},{en:"How many people live here?",es:"¿Cuántas personas viven aquí?"},{en:"How much water do you drink every day?",es:"¿Cuánta agua bebes cada día?"}],
-    9:[{en:"Who opens the door?",es:"¿Quién abre la puerta?"},{en:"What do you say?",es:"¿Qué dices?"},{en:"Where do you go after class?",es:"¿Adónde vas después de clase?"},{en:"When do you arrive at school?",es:"¿Cuándo llegas a la escuela?"},{en:"Why do you leave early?",es:"¿Por qué te vas temprano?"},{en:"How do you do it?",es:"¿Cómo lo haces?"},{en:"Which car do you choose?",es:"¿Qué coche eliges?"},{en:"Whose shoes are these?",es:"¿De quién son estos zapatos?"},{en:"How many students pass?",es:"¿Cuántos estudiantes aprueban?"},{en:"How much milk do you drink?",es:"¿Cuánta leche bebes?"}],
-    10:[{en:"Who are you waiting for?",es:"¿A quién esperas?"},{en:"What are you thinking about?",es:"¿En qué piensas?"},{en:"Where do you want to go?",es:"¿Adónde quieres ir?"},{en:"When do you return home?",es:"¿Cuándo vuelves a casa?"},{en:"Why are you here?",es:"¿Por qué estás aquí?"},{en:"How do you learn so much?",es:"¿Cómo aprendes tanto?"},{en:"Which of these do you prefer?",es:"¿Cuál de estos prefieres?"},{en:"Whose turn is it to cook?",es:"¿De quién es el turno de cocinar?"},{en:"How many books do you read?",es:"¿Cuántos libros lees?"},{en:"How much time do we have?",es:"¿Cuánto tiempo tenemos?"}]
-  };
-  const deepCopy = obj => JSON.parse(JSON.stringify(obj));
-  const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(PRESENT) };
+ // GAME 3 — School & Education + Exam Stress (Radical-changing verbs + Connector: también)
+// Direction: English -> Spanish
+// Rules applied:
+// - Only final ? is used in answers (no inverted ¿)
+// - Accents required
+// - Pronouns not required EXCEPT "usted" must appear when marked (formal)
+// - Connector for Game 3 appears: "también"
+
+const PRESENT = {
+  1: [
+    { en: "My school is big", es: "Mi colegio es grande" },
+    { en: "My teacher is kind", es: "Mi profesor es amable" },
+    { en: "I like maths", es: "Me gustan las matemáticas" },
+    { en: "I like English", es: "Me gusta el inglés" },
+    { en: "I study every day", es: "Estudio cada día" },
+    { en: "I do my homework", es: "Hago los deberes" },
+    { en: "The class is easy", es: "La clase es fácil" },
+    { en: "The exam is important", es: "El examen es importante" },
+    { en: "School starts at nine", es: "El colegio empieza a las nueve" },
+    { en: "I have a good timetable", es: "Tengo un buen horario" }
+  ],
+  2: [
+    { en: "I arrive on time", es: "Llego a tiempo" },
+    { en: "I listen in class", es: "Escucho en clase" },
+    { en: "I take notes", es: "Tomo apuntes" },
+    { en: "My subjects are interesting", es: "Mis asignaturas son interesantes" },
+    { en: "I do not cheat", es: "No copio" },
+    { en: "Is the teacher strict?", es: "El profesor es estricto?" },
+    { en: "Do you like science?", es: "Te gustan las ciencias?" },
+    { en: "Do you study after school? (formal)", es: "Estudia usted después del colegio?" },
+    { en: "The uniform is comfortable", es: "El uniforme es cómodo" },
+    { en: "The canteen is good", es: "El comedor es bueno" }
+  ],
+  3: [
+    { en: "I think the school is good", es: "Pienso que el colegio es bueno" },
+    { en: "I prefer history", es: "Prefiero la historia" },
+    { en: "I want better grades", es: "Quiero mejores notas" },
+    { en: "I can study at home", es: "Puedo estudiar en casa" },
+    { en: "I do not understand this exercise", es: "No entiendo este ejercicio" },
+    { en: "Do you remember the homework?", es: "Recuerdas los deberes?" },
+    { en: "Do you start at eight? (formal)", es: "Empieza usted a las ocho?" },
+    { en: "The rules are fair", es: "Las normas son justas" },
+    { en: "I am nervous before exams", es: "Estoy nervioso antes de los exámenes" },
+    { en: "I also study languages", es: "También estudio idiomas" }
+  ],
+  4: [
+    { en: "I eat in the canteen and then study", es: "Como en el comedor y luego estudio" },
+    { en: "I sleep well before an exam", es: "Duermo bien antes de un examen" },
+    { en: "I ask for help in class", es: "Pido ayuda en clase" },
+    { en: "I repeat the new words", es: "Repito las palabras nuevas" },
+    { en: "Sometimes I cannot focus", es: "A veces no puedo concentrarme" },
+    { en: "Do you play sports after school?", es: "Juegas a deportes después del colegio?" },
+    { en: "Do you serve on the student council? (formal)", es: "Sirve usted en el consejo estudiantil?" },
+    { en: "The library is quiet", es: "La biblioteca es tranquila" },
+    { en: "The labs are modern", es: "Los laboratorios son modernos" },
+    { en: "I also help my classmates", es: "También ayudo a mis compañeros" }
+  ],
+  5: [
+    { en: "I lose time on my phone", es: "Pierdo tiempo con el móvil" },
+    { en: "I usually start at nine", es: "Suelo empezar a las nueve" },
+    { en: "I find maths difficult", es: "Encuentro las matemáticas difíciles" },
+    { en: "I try to improve", es: "Intento mejorar" },
+    { en: "I do not sleep enough", es: "No duermo lo suficiente" },
+    { en: "Do you prefer studying alone?", es: "Prefieres estudiar solo?" },
+    { en: "Do you understand the topic? (formal)", es: "Entiende usted el tema?" },
+    { en: "The teachers help us", es: "Los profesores nos ayudan" },
+    { en: "The pressure is real", es: "La presión es real" },
+    { en: "I also take breaks", es: "También hago descansos" }
+  ],
+  6: [
+    { en: "I count the days until the holidays", es: "Cuento los días hasta las vacaciones" },
+    { en: "I return home and study", es: "Vuelvo a casa y estudio" },
+    { en: "I remember key formulas", es: "Recuerdo fórmulas clave" },
+    { en: "I do not forget my books", es: "No olvido mis libros" },
+    { en: "I can solve the problems now", es: "Puedo resolver los problemas ahora" },
+    { en: "Do you think the exam is fair?", es: "Piensas que el examen es justo?" },
+    { en: "Do you prefer morning exams? (formal)", es: "Prefiere usted exámenes por la mañana?" },
+    { en: "The principal is strict but fair", es: "El director es estricto pero justo" },
+    { en: "The gym is excellent", es: "El gimnasio es excelente" },
+    { en: "I also revise past papers", es: "También repaso exámenes de años anteriores" }
+  ],
+  7: [
+    { en: "I start to feel calm with a plan", es: "Empiezo a sentirme tranquilo con un plan" },
+    { en: "I think and then decide", es: "Pienso y luego decido" },
+    { en: "I prefer to study in the library", es: "Prefiero estudiar en la biblioteca" },
+    { en: "I cannot study with noise", es: "No puedo estudiar con ruido" },
+    { en: "I ask for more exercises", es: "Pido más ejercicios" },
+    { en: "Do you sleep well before exams?", es: "Duermes bien antes de los exámenes?" },
+    { en: "Do you repeat the grammar? (formal)", es: "Repite usted la gramática?" },
+    { en: "The timetable works for me", es: "El horario me funciona" },
+    { en: "The mock exams are useful", es: "Los exámenes de prueba son útiles" },
+    { en: "I also practise speaking", es: "También practico la expresión oral" }
+  ],
+  8: [
+    { en: "I usually remember key dates", es: "Suelo recordar fechas clave" },
+    { en: "I want to achieve good results", es: "Quiero lograr buenos resultados" },
+    { en: "I can explain the topic now", es: "Puedo explicar el tema ahora" },
+    { en: "I do not waste time", es: "No pierdo el tiempo" },
+    { en: "I find science interesting", es: "Encuentro las ciencias interesantes" },
+    { en: "Do you start your revision early?", es: "Empiezas tu repaso temprano?" },
+    { en: "Do you understand this chapter? (formal)", es: "Entiende usted este capítulo?" },
+    { en: "The teachers are demanding", es: "Los profesores son exigentes" },
+    { en: "The rules help us learn", es: "Las normas nos ayudan a aprender" },
+    { en: "I also help at study club", es: "También ayudo en el club de estudio" }
+  ],
+  9: [
+    { en: "I prefer a clear strategy", es: "Prefiero una estrategia clara" },
+    { en: "I think the pressure motivates me", es: "Pienso que la presión me motiva" },
+    { en: "I cannot sleep before big exams", es: "No puedo dormir antes de exámenes grandes" },
+    { en: "I ask for feedback from teachers", es: "Pido comentarios a los profesores" },
+    { en: "I repeat key points aloud", es: "Repito puntos clave en voz alta" },
+    { en: "Do you remember the formula?", es: "Recuerdas la fórmula?" },
+    { en: "Do you prefer group study? (formal)", es: "Prefiere usted el estudio en grupo?" },
+    { en: "The facilities are excellent", es: "Las instalaciones son excelentes" },
+    { en: "The stress is natural", es: "El estrés es natural" },
+    { en: "I also rest to recover", es: "También descanso para recuperarme" }
+  ],
+  10: [
+    { en: "I can manage stress with a plan", es: "Puedo gestionar el estrés con un plan" },
+    { en: "I start early and avoid distractions", es: "Empiezo temprano y evito distracciones" },
+    { en: "I prefer quality over quantity", es: "Prefiero calidad sobre cantidad" },
+    { en: "I want to improve every week", es: "Quiero mejorar cada semana" },
+    { en: "I do not give up under pressure", es: "No me rindo bajo presión" },
+    { en: "Do you sleep eight hours?", es: "Duermes ocho horas?" },
+    { en: "Do you also revise vocabulary? (formal)", es: "Revisa usted también el vocabulario?" },
+    { en: "The results depend on effort", es: "Los resultados dependen del esfuerzo" },
+    { en: "The teachers support us", es: "Los profesores nos apoyan" },
+    { en: "I also believe in myself", es: "También creo en mí mismo" }
+  ]
+};
+
+const deepCopy = obj => JSON.parse(JSON.stringify(obj));
+const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(PRESENT) };
 
   // ===================== Global cheats =====================
   const clampCheats = n => Math.max(0, Math.min(GLOBAL_CHEATS_MAX, n|0));
