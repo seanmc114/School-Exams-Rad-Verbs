@@ -163,17 +163,38 @@ const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(P
   function setGlobalCheats(n){ localStorage.setItem(GLOBAL_CHEATS_KEY, String(clampCheats(n))); }
 
   // ===================== Compare =====================
-  const norm = s => (s||"").trim();
-  const endsWithQM = s => norm(s).endsWith("?");
-  function core(s){
-    let t = norm(s);
-    if (t.startsWith("¿")) t = t.slice(1);
-    if (t.endsWith("?"))  t = t.slice(0,-1);
-    t = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    t = t.replace(/ñ/gi, "n");
-    return t.replace(/\s+/g," ").toLowerCase();
+const norm = s => (s || "").trim();
+const endsWithQM = s => norm(s).endsWith("?");
+
+// Accents REQUIRED; ñ ≡ n; ignore CAPITALS completely; ignore final '.' or leading '¿'
+function coreKeepAccents(s) {
+  let t = norm(s);
+
+  // Remove leading inverted mark
+  if (t.startsWith("¿")) t = t.slice(1);
+
+  // Remove ONLY a trailing ? or .
+  if (t.endsWith("?") || t.endsWith(".")) {
+    t = t.slice(0, -1);
   }
-  function cmpAnswer(user, expected){ if (!endsWithQM(user)) return false; return core(user) === core(expected); }
+
+  // Treat ñ as n so both are acceptable
+  t = t.replace(/ñ/gi, "n");
+
+  // ✅ IGNORE CAPITAL LETTERS by always lowercasing
+  t = t.toLowerCase();
+
+  // Remove extra spaces
+  return t.replace(/\s+/g, " ");
+}
+
+// Require '?' ONLY if expected Spanish is a question
+function cmpAnswer(user, expected) {
+  const expIsQ = endsWithQM(expected);
+  if (expIsQ && !endsWithQM(user)) return false;
+  return coreKeepAccents(user) === coreKeepAccents(expected);
+}
+
 
   // ===================== Best/unlocks (per tense) =====================
   const STORAGE_PREFIX = "tqplus:v3";
