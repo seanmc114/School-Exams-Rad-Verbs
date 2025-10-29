@@ -162,26 +162,24 @@ const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(P
   }
   function setGlobalCheats(n){ localStorage.setItem(GLOBAL_CHEATS_KEY, String(clampCheats(n))); }
 
-  // ===================== Compare =====================
-// ===================== Compare =====================
+ // ===================== Compare =====================
 const norm = s => (s || "").trim();
 const endsWithQM = s => norm(s).endsWith("?");
 
-// Accents REQUIRED; ñ ≡ n; ignore CAPITALS completely; ignore final '.' or leading '¿'
+// Accents REQUIRED; ñ ≡ n; CAPITALS IGNORED; ignore leading '¿' and a final '.' or '?'
 function coreKeepAccents(s) {
   let t = norm(s);
-
-  if (t.startsWith("¿")) t = t.slice(1);  // ignore Spanish opening ?
-  if (t.endsWith("?") || t.endsWith(".")) t = t.slice(0, -1); // ignore ending ? or .
-  t = t.replace(/ñ/gi, "n"); // ñ == n
-  t = t.toLowerCase(); // ignore capitals
-  return t.replace(/\s+/g, " "); // collapse spaces
+  if (t.startsWith("¿")) t = t.slice(1);            // ignore opening ¿ if typed
+  if (t.endsWith("?") || t.endsWith(".")) t = t.slice(0, -1); // ignore trailing ? or .
+  t = t.replace(/ñ/gi, "n");                        // treat ñ as n
+  t = t.toLowerCase();                              // ignore capitals
+  return t.replace(/\s+/g, " ");                    // collapse spaces
 }
 
-// Require '?' ONLY if expected Spanish is a question
+// Require '?' ONLY if the EXPECTED Spanish is a question
 function cmpAnswer(user, expected) {
   const expIsQ = endsWithQM(expected);
-  if (expIsQ && !endsWithQM(user)) return false;
+  if (expIsQ && !endsWithQM(user)) return false;    // enforce ? only for questions
   return coreKeepAccents(user) === coreKeepAccents(expected);
 }
 
